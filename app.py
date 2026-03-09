@@ -23,10 +23,16 @@ def submit_todo():
 
     item_name = request.form.get("itemName")
     item_description = request.form.get("itemDescription")
+    item_id = request.form.get("itemId")
+    item_uuid = request.form.get("itemUuid")
+    item_hash = request.form.get("itemHash")
 
     data = {
         "itemName": item_name,
-        "itemDescription": item_description
+        "itemDescription": item_description,
+        "itemId": item_id,
+        "itemUuid": item_uuid,
+        "itemHash": item_hash
     }
 
     collection.insert_one(data)
